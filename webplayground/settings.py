@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'ckeditor',
+    'core', # app incluida desde los archivos del profesor
+    'pages.apps.PagesConfig', # app incluida desde los archivos del profesor
 ]
 
 MIDDLEWARE = [

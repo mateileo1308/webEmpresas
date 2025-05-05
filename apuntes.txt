@@ -1,0 +1,2 @@
+            <!-- p>{{page.content|striptags|safe|truncatechars:"200"}}</p-->
+            <!-- p><a href="{% url 'page' page.id page.title|slugify %}">Leer más</a-->
