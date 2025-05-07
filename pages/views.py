@@ -5,12 +5,15 @@ from .models import Page
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import redirect, render, get_object_or_404, get_list_or_404
 from .forms import PageForm
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
 
 
 class StaffRequiredMixin(object):
     """
     Este Mixin requiere que el usuario sea parte del staff
     """
+    @method_decorator(staff_member_required)
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_staff:
             return redirect(reverse_lazy('admin:login'))
@@ -25,7 +28,8 @@ class pagesListView(ListView):
 class pageDetailView(DetailView):
     model = Page
 
-class pageCreateView(StaffRequiredMixin, CreateView):
+@method_decorator(staff_member_required, name='dispatch')
+class pageCreateView(CreateView):
     model = Page
     form_class = PageForm
     success_url = reverse_lazy('pages:pages')
