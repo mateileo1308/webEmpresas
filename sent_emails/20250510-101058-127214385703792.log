@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: alex3@hotmail.com
+Date: Sat, 10 May 2025 10:10:58 -0000
+Message-ID: <174687185869.1529375.9689351831048139502@matei-Nitro-AN515-46>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/NQ/cpl0aa-61e713103b8744a77ad809a3d47e3356/
+
+In case you’ve forgotten, you are: alex3
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
