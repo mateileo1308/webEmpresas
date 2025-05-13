@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'core', # app incluida desde los archivos del profesor
     'pages.apps.PagesConfig', # app incluida desde los archivos del profesor
+    'Profiles',
+    'profiles',
 ]
 
 MIDDLEWARE = [

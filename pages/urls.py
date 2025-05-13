@@ -9,5 +9,3 @@ pages_patterns = ([
     path('update/<int:pk>/', pageUpdateView.as_view(), name='update'),
     path('delete/<int:pk>/', pageDeleteView.as_view(), name='delete'),
 ], 'pages')
-
-
