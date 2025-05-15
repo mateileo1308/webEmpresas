@@ -31,8 +31,12 @@ class ThreadManager(models.Manager):
 class Thread(models.Model):
     users = models.ManyToManyField(User, related_name='threads')
     messages = models.ManyToManyField(Message)
+    updated = models.DateTimeField(auto_now = True)
 
     objects = ThreadManager()
+
+    class Meta:
+        ordering = ['-updated']
 
 
 def messages_changed(sender, **kwargs):
@@ -49,11 +53,10 @@ def messages_changed(sender, **kwargs):
                 print("Ups, ({}) no forma parte del hilo".format(msg.user))
                 false_pk_set.add(msg_pk)
 
-        # Forzar la actualización haciendo save
-    #    instance.save()
-
     # Borramos de pk_set los mensajes que concuerdan con los de false_pk_set
     pk_set.difference_update(false_pk_set)
 
+    # Forzar la actualización haciendo save
+    instance.save()
 
 m2m_changed.connect(messages_changed, sender=Thread.messages.through)
