@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig', # app incluida desde los archivos del profesor
     'Profiles',
     'profiles',
+    'messenger',
 ]
 
 MIDDLEWARE = [
