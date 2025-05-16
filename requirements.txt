@@ -1,5 +1,3 @@
-Package             Version
-------------------- -------
 asgiref             3.8.1
 astroid             3.3.9
 dill                0.4.0
